@@ -389,6 +389,8 @@ public abstract class RemapJarTask extends AbstractRemapJarTask {
 
 				rewriteJar();
 
+				tinyRemapper = null;
+				this.tinyRemapperService.close();
 				LOGGER.debug("Finished remapping {}", inputFile);
 			} catch (Exception e) {
 				try {

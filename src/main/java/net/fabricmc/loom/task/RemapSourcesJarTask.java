@@ -87,6 +87,7 @@ public abstract class RemapSourcesJarTask extends AbstractRemapJarTask {
 
 				modifyJarManifest();
 				rewriteJar();
+				sourceRemapperService.close();
 			} catch (Exception e) {
 				try {
 					Files.deleteIfExists(outputFile);
